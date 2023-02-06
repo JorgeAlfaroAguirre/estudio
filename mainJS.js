@@ -2,7 +2,7 @@
 
 const sideBarJSTemplate = `
     <ul>
-        <li id="JS_Basic">Básico</li>
+        <li><button type="button" onclick="JS_Basic()">Básico</button></li>
         <div id="JS_BasicList"></div>
         <li>Intermedio</li>
         <li>Avanzado</li>
@@ -16,37 +16,31 @@ const contentJSTemplate = `
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum quos dignissimos quis voluptatem laborum maiores reiciendis quisquam fugiat natus ad, ab doloremque eius nemo modi aperiam vel magnam. Repellat!</p>
 
-
-
 `
 let JSBool = false
 
 const getContent = document.getElementsByTagName("content").item(0)
 
-const JS_changeContent = () => getContent.innerHTML = contentJSTemplate
+const JS_showContent = () => getContent.innerHTML = contentJSTemplate
 const JS_hideContent = () => getContent.innerHTML = ""
 
 const getsideBar = document.getElementById("sideBar");
 
-const JS_changeSideBar = ()=> getsideBar.innerHTML= sideBarJSTemplate
-const JS_HideSideBar = ()=> getsideBar.innerHTML= ""    
+const JS_showSideBar = ()=> getsideBar.innerHTML= sideBarJSTemplate
+const JS_hideSideBar = ()=> getsideBar.innerHTML= ""    
 
 document.getElementById("JS").addEventListener("click", ()=>{
     if(JSBool==false){
-        JS_changeSideBar()
-        JS_changeContent()
+        JS_showSideBar()
+        JS_showContent()
     }else{
-        JS_HideSideBar()
+        JS_hideSideBar()
         JS_hideContent()
     } JSBool = !JSBool
 })
 
 // JS BASIC
 
-
-const JS_Basic = `<p>Hola Mundo!</p>
-
-`
 
 const JS_BasicList =`
     <ul>
@@ -78,15 +72,33 @@ const JS_BasicList =`
     </ul>
 `
 
-const getJSBasicList = document.getElementById("JS_BasicList");
+let JS_BoolBasic = false
+
+const showJS_BasicList = () =>document.getElementById("JS_BasicList").innerHTML = JS_BasicList;
+const hideJS_BasicList = () =>document.getElementById("JS_BasicList").innerHTML = "";
+
+const JS_Basic = ()=>{
+    if(JS_BoolBasic == false){
+        showJS_BasicList()
+    }else{
+        hideJS_BasicList()
+    }JS_BoolBasic=!JS_BoolBasic
+}
+
+
+
+
+/* const getJSBasicList = document.getElementById("JS_BasicList");
 
 const JS_changeJSBasicList = ()=> getJSBasicList.innerHTML= JS_BasicList
 const JS_HideJSBasicList = ()=> getsideBar.innerHTML= ""
+ */
 
-
-document.getElementById("JS_Basic").addEventListener("click", ()=>{
+/* document.getElementById("JS_Basic").addEventListener("click", ()=>{
     console.log("Probando")
-})
+}) */
+
+
 
 
 
