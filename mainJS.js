@@ -10,7 +10,7 @@ const sideBarJSTemplate = `
         <div id ="JS_AdvancedList"></div>
         <li id="JS_Frameworks">Frameworks</li>
         <div id ="JS_FrameworksList"></div>
-        <li id"JS_BackEnd">BackEnd</li>
+        <li id="JS_BackEnd">BackEnd</li>
         <div id="JS_BackEndList"></div>
     </ul>
 `
@@ -20,6 +20,7 @@ const contentJSTemplate = `
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum quos dignissimos quis voluptatem laborum maiores reiciendis quisquam fugiat natus ad, ab doloremque eius nemo modi aperiam vel magnam. Repellat!</p>
 
+    
 `
 let JSBool = false
 
@@ -53,7 +54,9 @@ document.getElementById("JS").addEventListener("click", ()=>{
 
 const JS_BasicList =`
     <ul>
-        <li>Script</li>
+        <li="output"><butto type="button" onclick="JS_showOutput()">Output</button></li>
+        <div id="esto"></div>
+        <script src="output.js"></script>
         <li>Var, Let, Const</li>
     </ul>
 `
@@ -149,18 +152,19 @@ const JS_Frameworks = ()=> {document.getElementById("JS_Frameworks").addEventLis
 const JS_BackEndList = `
     <ul>
         <li>Node</li>
-        <li>NestJS</li>
+        <li>otros</li>
     </ul>
 `
 
+
 let JS_BoolBackEnd = false
 
-const showJS_BackEndList = () =>document.getElementById("JS_BackEndList").innerHTML = JS_BackEndList;
+const showJS_BackEnddList = () =>document.getElementById("JS_BackEndList").innerHTML = JS_BackEndList;
 const hideJS_BackEndList = () =>document.getElementById("JS_BackEndList").innerHTML = "";
 
 const JS_BackEnd = ()=> {document.getElementById("JS_BackEnd").addEventListener("click", ()=>{
     if(JS_BoolBackEnd == false){
-        showJS_BackEndList()
+        showJS_BackEnddList()
     }else{
         hideJS_BackEndList()
     }JS_BoolBackEnd=!JS_BoolBackEnd

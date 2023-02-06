@@ -16,7 +16,25 @@ const templateoutPut = `
     </ul> 
     `;
 
-const getOutput = () =>document.getElementById("output").innerHTML = templateoutPut;
+const JS_showOutput = () => getContent.innerHTML = templateoutPut
+const JS_hideOutput = () => getContent.innerHTML = ""
+
+/* = templateoutPut;
+
+const showJS_Output = () =>document.getElementById("esto").innerHTML = templateoutPut;
+const hideJS_Output = () =>document.getElementById("esto").innerHTML = "";
+
+const JS_Advanced = ()=> {document.getElementById("JS_Advanced").addEventListener("click", ()=>{
+    if(JS_BoolAdvanced == false){
+        showJS_AdvancedList()
+    }else{
+        hideJS_AdvancedList()
+    }JS_BoolAdvanced=!JS_BoolAdvanced
+})} */
+
+
+
+
 
 const outputHTML = ()=> document.getElementById("HTML").innerHTML = "<strong>Este es un output con innerHTML, con la etiqueta strong</strong>";
 const outputText = ()=> document.getElementById("Text").innerText = "<strong>Este es un output con innerHTML, con la etiqueta strong</strong>";
