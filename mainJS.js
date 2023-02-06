@@ -54,7 +54,8 @@ document.getElementById("JS").addEventListener("click", ()=>{
 
 const JS_BasicList =`
     <ul>
-        <li="output"><butto type="button" onclick="JS_showOutput()">Output</button></li>
+        <li>Introducción</li>
+        <li="output"><butto type="button" onclick="JS_Output()">Output</button></li>
         <div id="esto"></div>
         <script src="output.js"></script>
         <li>Var, Let, Const</li>
