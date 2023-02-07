@@ -1,27 +1,6 @@
 //JS:
 
-const sideBarJSTemplate = `
-    <ul>
-        <li id="JS_Basic">Basic</li>
-        <div id="JS_BasicList"></div>
-        <li id="JS_Intermediate">Intermedio</li>
-        <div id="JS_IntermediateList"></div>
-        <li id="JS_Advanced">Avanzado</li>
-        <div id ="JS_AdvancedList"></div>
-        <li id="JS_Frameworks">Frameworks</li>
-        <div id ="JS_FrameworksList"></div>
-        <li id="JS_BackEnd">BackEnd</li>
-        <div id="JS_BackEndList"></div>
-    </ul>
-`
 
-const contentJSTemplate = `
-    <h2>JavaScript</h2>
-
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nostrum quos dignissimos quis voluptatem laborum maiores reiciendis quisquam fugiat natus ad, ab doloremque eius nemo modi aperiam vel magnam. Repellat!</p>
-
-    
-`
 let JSBool = false
 
 const getContent = document.getElementsByTagName("content").item(0)
@@ -49,126 +28,24 @@ document.getElementById("JS").addEventListener("click", ()=>{
     } JSBool = !JSBool
 })
 
-// JS BASIC
+
+const show =(id, template) => document.getElementById(id).innerHTML = template
+const hide =(id) => document.getElementById(id).innerHTML = ""
+
+const showAndHide =(Select,List, template)=>{
+    bool = false
+    document.getElementById(Select).addEventListener("click",()=>{
+        if(bool==false){
+            show(List,template)
+        }else{
+            hide(List)
+        }bool=!bool
+    })
+}
 
 
-const JS_BasicList =`
-    <ul>
-        <li>Introducción</li>
-        <li="output"><butto type="button" onclick="JS_Output()">Output</button></li>
-        <div id="esto"></div>
-        <script src="output.js"></script>
-        <li>Var, Let, Const</li>
-    </ul>
-`
-
-let JS_BoolBasic = false
-
-const showJS_BasicList = () =>document.getElementById("JS_BasicList").innerHTML = JS_BasicList;
-const hideJS_BasicList = () =>document.getElementById("JS_BasicList").innerHTML = "";
-
-const JS_Basic = ()=> {document.getElementById("JS_Basic").addEventListener("click", ()=>{
-    if(JS_BoolBasic == false){
-        showJS_BasicList()
-    }else{
-        hideJS_BasicList()
-    }JS_BoolBasic=!JS_BoolBasic
-})}
-
-
-// JS INTERMEDIATE
-
-const JS_IntermediateList = `
-    <ul>
-        <li>Map</li>
-        <li>ssss</li>
-    </ul>
-
-`
-
-
-let JS_BoolIntermediate = false
-
-const showJS_IntermediateList = () =>document.getElementById("JS_IntermediateList").innerHTML = JS_IntermediateList;
-const hideJS_IntermediateList = () =>document.getElementById("JS_IntermediateList").innerHTML = "";
-
-const JS_Intermediate = ()=> {document.getElementById("JS_Intermediate").addEventListener("click", ()=>{
-    if(JS_BoolIntermediate == false){
-        showJS_IntermediateList()
-    }else{
-        hideJS_IntermediateList()
-    }JS_BoolIntermediate=!JS_BoolIntermediate
-})}
-
-
-// JS ADVANCED
-
-const JS_AdvancedList = `
-    <ul>
-        <li>ssss</li>
-        <li>ssaaaass</li>
-    </ul>
-
-`
-
-let JS_BoolAdvanced = false
-
-const showJS_AdvancedList = () =>document.getElementById("JS_AdvancedList").innerHTML = JS_AdvancedList;
-const hideJS_AdvancedList = () =>document.getElementById("JS_AdvancedList").innerHTML = "";
-
-const JS_Advanced = ()=> {document.getElementById("JS_Advanced").addEventListener("click", ()=>{
-    if(JS_BoolAdvanced == false){
-        showJS_AdvancedList()
-    }else{
-        hideJS_AdvancedList()
-    }JS_BoolAdvanced=!JS_BoolAdvanced
-})}
-
-
-//JS FRAMEWORKS
-
-const JS_FrameworksList = `
-    <ul>
-        <li>React</li>
-        <li>Viu</li>
-    </ul>
-`
-
-
-let JS_BoolFrameworks = false
-
-const showJS_FrameworksList = () =>document.getElementById("JS_FrameworksList").innerHTML = JS_FrameworksList;
-const hideJS_FrameworksList = () =>document.getElementById("JS_FrameworksList").innerHTML = "";
-
-const JS_Frameworks = ()=> {document.getElementById("JS_Frameworks").addEventListener("click", ()=>{
-    if(JS_BoolAdvanced == false){
-        showJS_FrameworksList()
-    }else{
-        hideJS_FrameworksList()
-    }JS_BoolAdvanced=!JS_BoolAdvanced
-})}
-
-// JS BACKEND No me funciona Cristhian
-
-const JS_BackEndList = `
-    <ul>
-        <li>Node</li>
-        <li>otros</li>
-    </ul>
-`
-
-
-let JS_BoolBackEnd = false
-
-const showJS_BackEnddList = () =>document.getElementById("JS_BackEndList").innerHTML = JS_BackEndList;
-const hideJS_BackEndList = () =>document.getElementById("JS_BackEndList").innerHTML = "";
-
-const JS_BackEnd = ()=> {document.getElementById("JS_BackEnd").addEventListener("click", ()=>{
-    if(JS_BoolBackEnd == false){
-        showJS_BackEnddList()
-    }else{
-        hideJS_BackEndList()
-    }JS_BoolBackEnd=!JS_BoolBackEnd
-})}
-
-// JS TIPESCRIPT
+const JS_Basic = ()=>showAndHide("JS_Basic", "JS_BasicList", JS_BasicList)
+const JS_Intermediate = ()=>showAndHide("JS_Intermediate", "JS_IntermediateList", JS_IntermediateList)
+const JS_Advanced = ()=>showAndHide("JS_Advanced", "JS_AdvancedList", JS_AdvancedList)
+const JS_Frameworks = ()=>showAndHide("JS_Frameworks", "JS_FrameworksList", JS_FrameworksList)
+const JS_BackEnd = ()=>showAndHide("JS_BackEnd", "JS_BackEndList", JS_BackEndList)
